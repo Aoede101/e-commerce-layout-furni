@@ -1,0 +1,98 @@
+@import "../../variables-and-mixins";
+
+main {
+  padding: 0;
+}
+
+section#contact-us {
+  .container {
+    width: min(calc($pagePxWidth - 400px), 90%);
+    padding: 10rem 0;
+    display: grid;
+    .top {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        svg {
+          position: relative;
+          padding: 1rem 1.1rem;
+          background-color: $mineralGreen;
+          color: white;
+          margin-right: 1rem;
+          border-radius: 0.5rem;
+          i {
+            position: absolute;
+            translate: -50% 50%;
+          }
+        }
+        p {
+          font-size: 0.9rem;
+          font-weight: 400;
+          color: #777;
+        }
+      }
+      @include respond(l) {
+        grid-template-columns: 1fr;
+      }
+    }
+    form {
+      padding: 2rem 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 2rem;
+      row-gap: 0.5rem;
+      .sec {
+        label {
+          font-size: 0.9rem;
+          padding: 0.2rem 0;
+        }
+        input,
+        textarea {
+          font-size: 1rem;
+          padding: 0.8rem 0.6rem;
+          border-radius: 0.5rem;
+          border: #ccc 1px solid;
+          transition: border-color 0.2s, box-shadow 0.3s;
+          &:focus {
+            outline: transparent;
+            border-color: #777;
+            box-shadow: 0 2px 20px 5px #ccc;
+          }
+        }
+        label,
+        input,
+        textarea {
+          display: block;
+          width: 100%;
+        }
+        &.x-full {
+          grid-column: 1/3;
+        }
+        button {
+          margin: 2rem 0;
+          background-color: #222;
+          padding: 1rem 1.4rem;
+          color: #fff;
+          font-size: 1.1rem;
+          border-radius: 1rem;
+          transition: background-color 0.2s;
+          &:hover,
+          :active,
+          :focus {
+            background-color: #000;
+          }
+        }
+      }
+
+      @include respond(s) {
+        display: flex;
+        flex-direction: column;
+        padding: 4rem 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+@import "../../variables-and-mixins";
+
+section#services {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 7rem 0;
+    gap: 2rem;
+    @include respond(l) {
+      grid-template-columns: repeat(2, 1fr);
+      .service-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+    @include respond(s) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

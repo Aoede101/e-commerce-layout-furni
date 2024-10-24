@@ -1,0 +1,39 @@
+/* || LENGTHS */
+$pagePxWidth: 1300px;
+
+$innerWidth: min($pagePxWidth, 90%);
+
+/* || COLORS */
+
+$mineralGreen: #3b5d50;
+
+$lightMineralGreen: #dce5e4;
+
+$lightningYellow: #f9bf29;
+
+$porcelain: #eff2f1;
+
+/* || UTILITES */
+
+@mixin gridCenter {
+  display: grid;
+  place-items: center;
+}
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint == l) {
+    @media (max-width: 992px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == m) {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+  @if ($breakpoint == s) {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
+}

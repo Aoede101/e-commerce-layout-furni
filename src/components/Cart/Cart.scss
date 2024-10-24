@@ -1,0 +1,169 @@
+@import "../../variables-and-mixins";
+
+section#cart {
+  .container {
+    padding: 10rem 0;
+    gap: 1.5rem;
+    .products-table {
+      .show-s {
+        display: none;
+      }
+      .table-header,
+      .table-row {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        place-items: center;
+      }
+      .table-header {
+        font-size: 1.2rem;
+        font-weight: 500;
+        padding: 2rem 0;
+        border-bottom: 2px black solid;
+      }
+      .table-row {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid #c5c5c5;
+        figure {
+          width: 80%;
+          img {
+            width: 100%;
+          }
+        }
+        p {
+          font-size: 0.9rem;
+          &.name {
+            font-size: 1.2rem;
+          }
+        }
+        .amount {
+          display: flex;
+          align-items: center;
+          button {
+            font-size: 1.5rem;
+            padding: 0.5rem;
+            background-color: transparent;
+          }
+          input {
+            text-align: center;
+            font-family: inherit;
+            font-size: 1rem;
+            padding: 0.8rem 0;
+            width: 5rem;
+            border: #ccc 1px solid;
+            transition: border-color 0.2s, box-shadow 0.3s;
+            &:focus {
+              outline: transparent;
+              border-color: #777;
+              box-shadow: 0 2px 20px 1px #ccc;
+            }
+          }
+          /* remove number input arrows */
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+          input[type="number"] {
+            -moz-appearance: textfield;
+          }
+        }
+        .delete-btn {
+          padding: 1.6rem;
+          background-color: transparent;
+          position: relative;
+          border-radius: 0.5rem;
+          transition: background-color 0.2 s;
+          &:hover {
+            background-color: #bbb;
+          }
+          svg {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+    .check-out {
+      padding: 3rem 2rem;
+      width: min(calc($pagePxWidth * 30 / 100), 90%);
+      h2 {
+        font-weight: 500;
+        font-size: 1.6rem;
+        padding: 2rem 0 1rem;
+        border-bottom: 1px solid #c5c5c5;
+      }
+      .subtotal,
+      .total {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 2rem;
+        h3 {
+          font-size: 0.9rem;
+          font-weight: 300;
+        }
+        p {
+          font-weight: 500;
+        }
+      }
+      button {
+        padding: 1rem;
+        background-color: #222;
+        color: #fff;
+        font-size: 1.2rem;
+        border-radius: 1rem;
+        margin-top: 2.5rem;
+      }
+    }
+    @include respond(s) {
+      .products-table {
+        .title-s {
+          text-align: center;
+          font-size: 2rem;
+          padding-bottom: 2rem;
+          border-bottom: 2px black solid;
+        }
+        .table-header {
+          display: none;
+        }
+        .table-row {
+          grid-template-columns: repeat(5, 1fr);
+          grid-template-rows: repeat(4, 1fr);
+          place-items: center start;
+          padding: 2rem;
+          figure {
+            place-self: center;
+            grid-row: 1/5;
+            grid-column: 1/3;
+            width: 100%;
+          }
+          p {
+            font-size: 1.1rem;
+            &.name {
+              grid-column: 3/6;
+              grid-row: 1/3;
+              place-self: center;
+              font-size: 1.3rem;
+            }
+            &.total {
+              display: none;
+            }
+          }
+          .price-div {
+            grid-column: 3/6;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+          }
+          .amount {
+            grid-column: 3/5;
+            place-self: center;
+          }
+        }
+        .show-s {
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@import "../../variables-and-mixins";
+
+header {
+  background-color: $mineralGreen;
+  color: #fff;
+  .container {
+    display: grid;
+    grid-template-columns: 9fr 10fr;
+    .left {
+      max-width: 30rem;
+      padding: 7rem 0;
+      h1 {
+        font-size: 3.5rem;
+      }
+      p {
+        opacity: 0.6;
+        padding: 1.5rem 0;
+        font-size: 0.9rem;
+        letter-spacing: 0.05rem;
+        line-height: 1.5rem;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+        display: inline-block;
+        padding: 1rem 1.5rem;
+        border-radius: 5rem;
+        margin-right: 1rem;
+        font-weight: 500;
+        &.shop-link {
+          background-color: $lightningYellow;
+          color: #000;
+          transition: box-shadow 0.2s;
+          &:active {
+            box-shadow: #ffffff63 0 0 10px 3px;
+          }
+        }
+        &.explore-link {
+          border: #ffffff63 solid 2px;
+          transition: border-color 0.2s;
+        }
+        &.explore-link:hover {
+          border-color: #fff;
+        }
+      }
+    }
+    .right {
+      position: relative;
+      img {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+      }
+      .dots-grid {
+        right: -8rem;
+        top: 3rem;
+        position: absolute;
+      }
+    }
+    @include respond(l) {
+      grid-template-columns: 1fr;
+      .left {
+        width: 100%;
+      }
+      .right {
+        img {
+          position: relative;
+        }
+      }
+    }
+    @include respond(s) {
+      .left {
+        padding-bottom: 0;
+      }
+      .right {
+        img {
+          padding-top: 5rem;
+          width: 150%;
+        }
+      }
+    }
+  }
+}

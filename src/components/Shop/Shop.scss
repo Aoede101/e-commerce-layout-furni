@@ -1,0 +1,19 @@
+@import "../../variables-and-mixins";
+
+section#shop {
+  padding: 4rem 0;
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    @include respond(l) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include respond(m) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond(s) {
+      display: block;
+    }
+  }
+}
