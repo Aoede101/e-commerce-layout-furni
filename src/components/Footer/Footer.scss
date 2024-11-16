@@ -126,7 +126,7 @@ footer {
         }
       }
     }
-    .cridits {
+    .credits {
       display: grid;
       grid-template-columns: 1fr 1fr;
       padding: 2rem 0;
@@ -161,6 +161,20 @@ footer {
       }
       .hyper-links {
         display: block;
+      }
+    }
+    @include respond(s) {
+      .credits {
+        display: block;
+        .right {
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+          padding: 1rem 0;
+          a {
+            padding: 0;
+          }
+        }
       }
     }
   }

@@ -26,7 +26,7 @@ function Layout() {
     <div className="container">
       {pathname.startsWith("/shop") || pathname.startsWith("/cart") ? (
         <>
-          <div className="left">
+          <div className="left small-text">
             <h1>
               {pathname === "/" ? "Modern Interior Design Studio" : <Outlet />}
             </h1>

@@ -70,12 +70,24 @@ header {
     }
     @include respond(s) {
       .left {
-        padding-bottom: 0;
+        padding: 2rem 0 0;
+        h1 {
+          font-size: 3rem;
+        }
+        p {
+          padding: 1rem 0 3rem;
+        }
+        &.small-text{
+          padding: 5rem 0;
+        }
       }
       .right {
         img {
-          padding-top: 5rem;
+          padding-top: 4rem;
           width: 150%;
+        }
+        .dots-grid {
+          top: 1rem;
         }
       }
     }

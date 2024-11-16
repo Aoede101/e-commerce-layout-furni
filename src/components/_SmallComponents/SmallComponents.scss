@@ -295,6 +295,12 @@ section#our-team {
       height: 70%;
     }
   }
+  @include respond(s) {
+    padding: 2rem;
+    .sliding-bg{
+      width: calc(100% - 2rem);
+    }
+  }
 }
 
 .dots-grid {

@@ -104,7 +104,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="cridits">
+        <div className="credits">
           <div className="left">
             <p>
               Copyright &copy;2024. All Rights Reserved. — Designed with love by
